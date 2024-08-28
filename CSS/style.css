@@ -1,0 +1,998 @@
+/* Fonts Start */
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&display=swap');
+
+@font-face {
+    font-family: 'Recoleta DEMO';
+    src: url('Recoleta-RegularDEMO.woff2') format('woff2'),
+        url('Recoleta-RegularDEMO.woff') format('woff'),
+        url('Recoleta-RegularDEMO.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Fonts End */
+
+
+/* General CSS Start */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    box-sizing: border-box;
+    height: 6000px;
+    overflow-x: hidden !important;
+    background-color: #000;
+}
+
+/* General CSS End */
+
+
+/* Cursor Animation CSS Start */
+
+.cursor-main {
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 50%;
+    background: transparent;
+    pointer-events: none;
+    z-index: 111;
+    border: 2px solid #fff;
+    transition: all 0.2s ease-out;
+    animation: moveCursor1 .5s infinite alternate;
+}
+
+.expand {
+    background: transparent;
+    animation: moveCursor2 .5s forwards;
+    border: 1px solid #fff;
+}
+
+@keyframes moveCursor1 {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(.8);
+    }
+}
+
+@keyframes moveCursor2 {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(2);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+/* Cursor Animation CSS End */
+
+
+/* Header CSS Start */
+
+.menu-btn {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.menu-btn .bar {
+    width: 30px;
+    height: 4px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 4px;
+    transform: translate(-50%, -50%);
+    background-color: #dd7732;
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-btn .bar:nth-of-type(2) {
+    top: calc(50% - 9px);
+}
+
+.menu-btn .bar:nth-of-type(3) {
+    top: calc(50% + 9px);
+}
+
+ul.nav__list {
+    width: 100%;
+    margin: auto;
+}
+
+li.nav__list_item {
+    text-align: center;
+}
+
+ul.nav__list li.nav__list_item {
+    font-size: 50px;
+}
+
+ul.nav__list li.nav__list_item a.nav__link {
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 35px;
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+}
+
+ul.nav__list li.nav__list_item a.nav__link:hover {
+    color: #dd7732;
+}
+
+/* Change the hamburger icon when the menu is open */
+
+.menu-btn.active .bar:nth-of-type(1) {
+    display: none;
+}
+
+.menu-btn.active .bar:nth-of-type(2) {
+    top: 50%;
+    transform: translate(-50%, 0%) rotate(45deg);
+}
+
+.menu-btn.active .bar:nth-of-type(3) {
+    top: 50%;
+    transform: translate(-50%, 0%) rotate(-45deg);
+}
+
+/* The menu that will appear */
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    background: #000;
+    transform: translateX(100%);
+    transition: transform 0.5s;
+    z-index: 9;
+}
+
+.nav.active {
+    transform: translateX(0);
+}
+
+.nav .nav__list_item {
+    list-style-type: none;
+}
+
+#mainHeader {
+    transition: all 0.3s ease;
+    /* Initial background color */
+    background-color: transparent;
+}
+
+.scrolled {
+    background-color: #101010 !important;
+    /* Change to desired color */
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    padding: 20px 60px;
+    z-index: 99;
+}
+
+/* Header CSS End */
+
+
+/* Banner CSS Start */
+
+.banner {
+    background-color: #000;
+    padding-top: 200px;
+    padding-bottom: 200px;
+    position: relative;
+    z-index: 0;
+}
+
+/* section.banner::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    background: url(../Assets/Images/paper-plane.png);
+    z-index: 2;
+    filter: brightness(1) contrast(0);
+    background-size: 30%;
+    background-repeat: no-repeat;
+} */
+
+.banner h1 {
+    font-family: 'Recoleta DEMO';
+    font-size: 90px;
+    line-height: 90px;
+    color: #fff;
+}
+
+.banner p {
+    color: #fff;
+    font-size: 90px;
+    font-family: 'Recoleta DEMO';
+    line-height: 90px;
+    position: relative;
+    left: 13%;
+    margin-top: 35px;
+}
+
+.banner p span.typed-text,
+.banner p span.cursor.typing {
+    color: #dd7732;
+}
+
+.banner h2 {
+    font-size: 30px;
+    line-height: 40px;
+    position: relative;
+    left: 13%;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 10px;
+    margin-top: 55px;
+    font-family: "Montserrat", sans-serif;
+}
+
+p span.cursor {
+    display: inline-block;
+    background-color: #fff;
+    margin-left: 0.1rem;
+    width: 3px;
+    animation: blink 1s infinite;
+}
+
+p span.cursor.typing {
+    animation: none;
+}
+
+@keyframes blink {
+    0% {
+        background-color: #ccc;
+    }
+
+    49% {
+        background-color: #ccc;
+    }
+
+    50% {
+        background-color: transparent;
+    }
+
+    99% {
+        background-color: transparent;
+    }
+
+    100% {
+        background-color: #ccc;
+    }
+}
+
+.banner .resume-btn {
+    margin-top: 65px;
+}
+
+/* Banner CSS End */
+
+
+/* Projects CSS Start */
+
+.projects {
+    background-color: #000;
+    padding: 0 0 150px 0;
+}
+
+.projects .project-demo {
+    height: 450px;
+    padding-right: 0;
+    position: relative;
+}
+
+.projects .project-demo img {
+    height: 450px;
+}
+
+/* .projects .project-demo::-webkit-scrollbar {
+    width: 10px;
+}
+
+.projects .project-demo::-webkit-scrollbar-track {
+    background-color: #fff;
+}
+
+.projects .project-demo::-webkit-scrollbar-thumb {
+    background-color: #dd7732;
+} */
+
+.projects .project-demo .img-text {
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+    transform: translateY(0);
+    padding-left: 35px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.projects .project-demo .img-text h3 {
+    text-transform: uppercase;
+    font-family: 'Recoleta DEMO';
+    font-size: 26px;
+    line-height: 32px;
+}
+
+.projects .project-demo .img-text a {
+    color: #dd7732;
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    transition: all 0.3s ease-in-out;
+    letter-spacing: 3px;
+    position: relative;
+    padding-bottom: 3px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+}
+
+.projects .project-demo .img-text a::before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    content: "";
+    visibility: hidden;
+    opacity: 0;
+    background-color: #dd7732;
+    transition: all 0.3s ease-in-out;
+}
+
+.projects .project-demo .img-text a:hover {
+    color: #dd7732;
+}
+
+.projects .project-demo .img-text a:hover::before {
+    width: 100%;
+    visibility: visible;
+    opacity: 1;
+}
+
+.projects .project-demo:hover .img-text {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(-100px);
+}
+
+/* Projects CSS End */
+
+
+/* Skills Section CSS Start */
+
+.skills {
+    background-color: #000;
+    padding: 50px 0 150px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.skills h2 {
+    font-size: 75px;
+    line-height: 80px;
+    font-family: 'Recoleta DEMO';
+    color: rgba(255, 255, 255, 0.4);
+    transition: all 0.3s ease-in-out;
+}
+
+.skills h2:hover {
+    color: #fff;
+}
+
+.skill-box img {
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.skill-box:hover img {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Skills Section CSS End */
+
+
+/* About Section CSS Start */
+
+.about {
+    padding: 150px 0;
+    position: relative;
+}
+
+.about::before {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background: url(../Assets/Images/bg-pattern.png) no-repeat right bottom;
+    transform: translateY(-200px);
+}
+
+.about h2 {
+    font-size: 80px;
+    color: #fff;
+    font-family: 'Recoleta DEMO';
+    line-height: 85px;
+}
+
+.about p {
+    color: #ccc;
+    text-transform: capitalize;
+    font-size: 25px;
+    line-height: 42px;
+    width: 70%;
+    margin: 85px 0;
+    font-family: "Montserrat", sans-serif;
+    position: relative;
+    padding-left: 65px;
+}
+
+.about p span {
+    color: #fff;
+    border-bottom: 2px solid #fff;
+}
+
+.about p::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background: url(../Assets/Images/quote.png) no-repeat;
+    background-size: 40px;
+}
+
+span.signature {
+    color: #fff;
+    font-family: "Corinthia", cursive;
+    font-size: 56px;
+    line-height: 60px;
+}
+
+/* About Section CSS End */
+
+
+/* Work Section CSS Start */
+
+.work-heading h2 {
+    color: #fff;
+    font-size: 24px;
+    font-family: "Montserrat", sans-serif;
+    line-height: 30px;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 7px;
+    font-weight: 400;
+}
+
+.works {
+    padding: 0 0 150px 0;
+}
+
+.work-box h2 {
+    color: #fff;
+    font-size: 65px;
+    font-family: 'Recoleta DEMO';
+    line-height: 70px;
+}
+
+.work-box {
+    border-top: 1px solid #ccc;
+}
+
+.work-box:last-child {
+    border-bottom: 1px solid #ccc;
+}
+
+.work-box img {
+    opacity: 0.5;
+    transition: all 0.3s ease-in-out;
+}
+
+.work-box img:hover {
+    opacity: 1;
+}
+
+/* Work Section CSS End */
+
+
+/* Static Section CSS Start */
+
+.static {
+    padding: 0 0 150px 0;
+}
+
+.static-head h2 {
+    color: #fff;
+    font-size: 24px;
+    font-family: "Montserrat", sans-serif;
+    line-height: 30px;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 7px;
+    font-weight: 400;
+
+}
+
+.design-img {
+    height: 700px;
+    overflow: scroll;
+    padding-right: 0;
+}
+
+.design-img:last-child {
+    margin-top: 6rem;
+}
+
+.design-img::-webkit-scrollbar {
+    width: 10px;
+}
+
+.design-img::-webkit-scrollbar-track {
+    background-color: #fff;
+}
+
+.design-img::-webkit-scrollbar-thumb {
+    background-color: #dd7732;
+}
+
+/* Static Section CSS End */
+
+
+
+/* Experience Section CSS Start */
+
+section.experience {
+    padding: 150px 0;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #Ccc;
+}
+
+.expr h3 {
+    font-family: 'Recoleta DEMO';
+    color: #fff;
+    font-size: 34px;
+    line-height: 40px;
+}
+
+.expr p {
+    color: #dd7732;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    line-height: 30px;
+    margin-top: 10px;
+    letter-spacing: 5px;
+}
+
+.expr {
+    margin-bottom: 55px;
+}
+
+.expr:last-child {
+    margin-bottom: 0;
+}
+
+.resume-btn a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 5px;
+    line-height: 24px;
+    border: 1px solid #fff;
+    padding: 20px 35px;
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+}
+
+.resume-btn a:hover {
+    background-color: #dd7732;
+    border: 1px solid #dd7732;
+}
+
+.btwn-shape {
+    filter: invert(1);
+    text-align: center;
+    margin: auto;
+}
+
+.btwn-shape {
+    animation: upDown 10s ease-in-out infinite;
+}
+
+@keyframes upDown {
+
+    0%,
+    100% {
+        transform: translateY(150PX);
+    }
+
+    50% {
+        transform: translateY(-200px);
+    }
+}
+
+/* Experience Section CSS End */
+
+
+/* Contact Section CSS Start */
+
+.contact {
+    background: url(../Assets/Images/contact-bg.png) no-repeat center center/cover;
+    padding: 150px 0 0 0;
+}
+
+.contact h3 {
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 24px;
+    font-family: "Montserrat", sans-serif;
+    line-height: 30px;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 7px;
+    font-weight: 400;
+}
+
+.contact h2 {
+    font-size: 80px;
+    line-height: 100px;
+    font-family: 'Recoleta DEMO';
+    color: #FFF;
+}
+
+.contact .resume-btn {
+    margin: 50px 0 150px 0;
+}
+
+/* Contact Section CSS End */
+
+
+/* Copyright Section CSS Start */
+
+.copyright h6 {
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 15px;
+    line-height: 20px;
+}
+
+.social a {
+    color: #fff;
+    font-size: 26px;
+    margin-right: 25px;
+}
+
+.social a:last-child {
+    margin-right: 0;
+}
+
+/* Copyright Section CSS End */
+
+
+/* Responsive Start */
+
+@media (max-width: 575px) {
+    .banner h1 {
+        font-size: 60px;
+        line-height: 70px;
+    }
+    
+    .banner p {
+        font-size: 35px;
+        line-height: 45px;
+        left: 0;
+    }
+    
+    section.banner {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        padding-top: 120px;
+        padding-bottom: 70px;
+    }
+    
+    .container-fluid {
+        padding: 0 !important;
+    }
+    
+    .banner h2 {
+        left: 0;
+        font-size: 18px;
+        line-height: 34px;
+    }
+    
+    .resume-btn a {
+        font-size: 14px;
+        padding: 16px;
+        margin-top: 10px;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .banner img {
+        margin-top: 55px;
+    }
+
+    section.projects.px-5 {
+        padding: 0 20px 60px 20px !important;
+    }
+    
+    .projects .row {
+        gap: 50px;
+    }
+    
+    .projects .project-demo {
+        height: 100% !important;
+    }
+
+    section.projects.px-5 {
+        padding: 0 20px 60px 20px !important;
+    }
+    
+    .projects .row {
+        gap: 50px;
+    }
+    
+    .projects .project-demo {
+        height: 100% !important;
+    }
+    
+    .skills .col-md-12 {
+        display: block !important;
+    }
+    
+    .skills h2 {
+        font-size: 45px;
+        line-height: 50px;
+        margin-bottom: 25px;
+    }
+    
+    .skill-box img {
+        display: none;
+    }
+    
+    section.skills {
+        padding: 60px 20px !important;
+    }
+
+    .skill-box:last-child {
+        margin-bottom: 0;
+    }
+    
+    .about h2 {
+        font-size: 40px;
+        line-height: 45px;
+        margin-top: 30px;
+    }
+    
+    .about p {
+        font-size: 20px;
+        line-height: 40px;
+        width: 100%;
+        padding-left: 30px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    
+    section.about {
+        padding: 60px 20px !important;
+    }
+    
+    .about p::before {
+        background-size: 20px;
+        top: 5px;
+    }
+    
+    .about::before {
+        background-size: 35%;
+        transform: translateY(-140px);
+    }
+    
+    .about .offset-1.col-md-6 {
+        margin-left: 0;
+    }
+
+    .work-heading h2, .static-head h2 {
+        font-size: 20px;
+        line-height: 24px;
+        margin-bottom: 20px;
+    }
+    
+    .work-box {
+        display: block !important;
+    }
+    
+    .work-box h2 {
+        font-size: 26px;
+        line-height: 36px;
+        margin-bottom: 20px;
+    }
+    
+    .work-box .col-md-2 {
+        justify-content: center !important;
+        margin-top: 30px;
+    }
+    
+    .work-box .col-md-2 img {
+        width: 50px;
+    }
+    
+    .work-box {
+        padding: 30px 0 !important;
+    }
+
+    section.works {
+        padding: 0 40px 60px 40px;
+    }
+    
+    .works .col-md-12 {
+        padding: 0;
+    }
+
+    .col-md-12.static-head {
+        justify-content: flex-start !important;
+        padding: 0;
+    }
+    
+    section.static {
+        padding: 0 40px 60px 40px;
+    }
+    
+    .design-img {
+        padding: 0;
+        height: 250px;
+    }
+
+    .design-img:last-child {
+        margin-top: 3rem;
+    }
+
+    .static-head h2 {
+        margin-bottom: 35px;
+    }
+
+    section.experience {
+        padding: 60px 0;
+    }
+    
+    .experience .col-md-4 img {
+        width: 100%;
+    }
+    
+    .experience .col-md-6 {
+        padding: 0 40px;
+    }
+    
+    .expr h3 {
+        font-size: 25px;
+    }
+
+    .experience .col-md-4 {
+        width: 80%;
+        margin: 0px auto 30px auto;
+    }
+
+    .btwn-shape {
+        display: none;
+    }
+
+    .experience .resume-btn a {
+        padding: 15px !important;
+    }
+
+    .contact {
+        padding: 60px 0 0 0;
+    }
+
+    .contact h2 {
+        font-size: 40px;
+        line-height: 50px;
+    }
+
+    .contact .resume-btn a {
+        width: 80%;
+        margin-bottom: 25px;
+    }
+
+    .contact .resume-btn {
+        margin-bottom: 25px;
+    }
+
+    .copyright {
+        text-align: center;
+    }
+
+    .social {
+        justify-content: center !important;
+    }
+
+    .copyright .col-md-2 {
+        margin: 20px 0;
+    }
+
+    .contact h3 {
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+
+    li.nav__list_item {
+        font-size: 25px !important;
+        border-bottom: 1px solid #ccc;
+    }
+    
+    ul.nav__list {
+        padding: 0;
+    }
+    
+    nav.nav.active {
+        padding: 0 70px;
+    }
+    
+    header#mainHeader {
+        padding: 20px 30px 0 20px;
+    }
+    
+    a.nav__link {
+        margin: 15px 0 !important;
+    }
+}
+
+/* Responsive End */
